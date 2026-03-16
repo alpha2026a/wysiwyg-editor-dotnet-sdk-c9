@@ -46,7 +46,7 @@ jobs:
 
       - name: Read version from demo-core/bower.json
         run: |
-          VERSION=$(jq -r '.version' demo-core/bower.json)
+          VERSION=$(jq -r '.dependencies["froala-wysiwyg-editor"]' demo-core/bower.json)
       
           if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
             echo "Failed to determine version from demo-core/bower.json"
