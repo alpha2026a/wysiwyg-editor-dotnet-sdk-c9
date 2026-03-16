@@ -67,7 +67,7 @@ jobs:
          
      - name: Update demo-core/bower.json
        run: |
-         jq --arg VERSION "$VERSION" '.version = $VERSION' demo-core/bower.json > tmp.json
+         jq --arg VERSION "$VERSION" '.dependencies["froala-wysiwyg-editor"] = $VERSION' demo-core/bower.json > tmp.json
          mv tmp.json demo-core/bower.json
          
      - name: Update FroalaEditorSDK.nuspec
